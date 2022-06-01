@@ -1,0 +1,168 @@
+@import "https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Volkhov&display=swap";
+
+$normal-text: "Oswald", "sans-serif";
+$form-text: "Roboto", "sans-serif";
+$logo-text: "Volkhov", "serif";
+
+.main-wrap {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+.bg-wrap {
+  width: max(820px, 70%);
+
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  background: url("assets/forest-background.jpg"), no-repeat, center;
+  background-size: cover;
+}
+
+.logo-container {
+  flex: 0 0 40%;
+  background: rgb(0, 0, 0, 0.5);
+  height: 120px;
+  margin: 25vh 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2%;
+  box-sizing: border-box;
+
+  .logo {
+    height: 55px;
+    margin-right: 8px;
+
+    img {
+      height: 100%;
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+        brightness(102%) contrast(102%);
+    }
+  }
+
+  .logo-text {
+    color: white;
+
+    font: {
+      family: $logo-text;
+      size: max(3em, 1vw);
+    }
+  }
+}
+
+.sign-up-container {
+  flex: 0 0 60%;
+  background-color: rgba(240, 242, 240, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 2em;
+
+  h2 {
+    font-family: $normal-text;
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+
+  .intro {
+    padding-bottom: 10%;
+  }
+}
+
+form {
+  h2 {
+    padding-bottom: 5%;
+  }
+
+  &.submitted input:invalid {
+    border: 1px solid rgb(207, 39, 39);
+  }
+
+  .input-area {
+    background: white;
+    margin: 0 -2em;
+    padding: 3% 2em;
+    box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.363);
+  }
+}
+
+.input-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-row {
+  flex: 0 0 50%;
+  padding-bottom: 2%;
+
+  label,
+  input {
+    font-family: $form-text;
+    display: block;
+  }
+
+  label {
+    margin-bottom: 1%;
+    font-size: 0.8em;
+    color: rgb(49, 49, 49);
+  }
+
+  input {
+    width: 70%;
+    height: 1.8em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+
+    &.error {
+      border: 1px solid rgb(207, 39, 39);
+    }
+
+    &.error:last-child::after {
+      content: "Passwords must match";
+      display: inline-block;
+      height: 20px;
+      width: 40px;
+      top: 50px;
+      position: absolute;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 1px solid rgb(42, 118, 206);
+      box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.178);
+    }
+  }
+}
+
+.submit-area {
+  padding: 5% 0 0 0;
+
+  button {
+    font-family: $form-text;
+    font-size: 18px;
+    width: max(150px, 30%);
+    padding: 2% 5%;
+    border: none;
+    background: rgb(52, 78, 10);
+    color: rgb(241, 238, 238);
+    border-radius: 7px;
+  }
+}
+
+.member-access {
+  padding: 5% 0 0 0;
+  font-family: $normal-text;
+  display: flex;
+
+  p {
+    margin-right: 6px;
+  }
+
+  a {
+    color: rgb(52, 78, 10);
+  }
+}
